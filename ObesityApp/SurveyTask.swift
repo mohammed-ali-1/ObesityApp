@@ -18,6 +18,7 @@ public var SurveyTask: ORKOrderedTask {
     var form5Questions = [ORKFormItem]()
     var form6Questions = [ORKFormItem]()
     var form7Questions = [ORKFormItem]()
+    var form8Questions = [ORKFormItem]()
     var genders = [ORKTextChoice]()
     
     //Beginning of: Instruction step
@@ -448,6 +449,13 @@ public var SurveyTask: ORKOrderedTask {
     form7Questions += [fibersQuestion]
     //
     
+    //Followed a diet question
+    let dietAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let dietQuestionText = "Have you ever followed a diet?"
+    let dietQuestion = ORKFormItem(identifier: "dietQuestion", text: dietQuestionText, answerFormat: dietAnswerFormat, optional: false)
+    form7Questions += [dietQuestion]
+    //
+    
     //followed a diet
     var dietStyles = [ORKTextChoice]()
     let lowCarb = ORKTextChoice(text: "Low carbs", detailText: "nil", value: "lowCarb" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
@@ -456,15 +464,51 @@ public var SurveyTask: ORKOrderedTask {
     let portionControl = ORKTextChoice(text: "Portion control", detailText: nil, value: "portionControl" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     dietStyles += [lowCarb, lowFat, calorieCounting, portionControl]
     
-//    let dietFollowedAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: diet)
-//    let genderQuestionText = "Gender: "
-//    let genderQuestion = ORKFormItem(identifier: "genderQuestion", text: genderQuestionText, answerFormat: genderAnswerFormat, optional: false)
-//    form1Questions += [genderQuestion]
+    let dietFollowedAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: dietStyles)
+    let dietFollowedQuestionText = "If you answered yes to the previous question, what type of diet did you follow? "
+    let dietFollowedQuestion = ORKFormItem(identifier: "dietFollowedQuestion", text: dietFollowedQuestionText, answerFormat: dietFollowedAnswerFormat, optional: false)
+    form7Questions += [dietFollowedQuestion]
+    //
+    
+    //water intake
+    var waterAmount = [ORKTextChoice]()
+    let lowAmount = ORKTextChoice(text: "1 Liter", detailText: "nil", value: "lowAmount" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let mediumAmount = ORKTextChoice(text: "2 Liters", detailText: nil, value: "mediumAmount" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let largeAmount = ORKTextChoice(text: "3 Liters", detailText: nil, value: "largeAmount" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    waterAmount += [lowAmount, mediumAmount, largeAmount]
+    
+    let waterIntakeAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: dietStyles)
+    let waterIntakeQuestionText = "How much water do you drink each day?"
+    let waterIntakeQuestion = ORKFormItem(identifier: "waterIntakeQuestion", text: waterIntakeQuestionText, answerFormat: waterIntakeAnswerFormat, optional: false)
+    form7Questions += [waterIntakeQuestion]
     //
     
     //End of form7 on Current/Prior diet
     form7.formItems = form7Questions
     steps += [form7]
+    //
+    
+    //Form8: Social/Behavioural
+    let form8 = ORKFormStep(identifier: "form8", title: "Form #8", text: "Social/Behavioral")
+    //
+    
+    //Eat outside/home
+    let eatPlaceAnswerFormat = ORKBooleanAnswerFormat(yesString: "Outside", noString: "Home")
+    let eatPlaceQuestionText = "Do you usually eat outside or at home?"
+    let eatPlaceQuestion = ORKFormItem(identifier: "eatPlaceQuestion", text: eatPlaceQuestionText, answerFormat: eatPlaceAnswerFormat, optional: false)
+    form8Questions += [eatPlaceQuestion]
+    //
+    
+    //Eat alone/with a group
+    let eatWithAnswerFormat = ORKBooleanAnswerFormat(yesString: "Alone", noString: "With a group")
+    let eatWithQuestionText = "Do you usually eat alone or with a group?"
+    let eatWithQuestion = ORKFormItem(identifier: "eatWithQuestion", text: eatWithQuestionText, answerFormat: eatWithAnswerFormat, optional: false)
+    form8Questions += [eatWithQuestion]
+    //
+    
+    //End of form8 on Current/Prior diet
+    form8.formItems = form8Questions
+    steps += [form8]
     //
     
     let completionStep = ORKCompletionStep(identifier: "SummaryStep")
