@@ -19,6 +19,7 @@ public var SurveyTask: ORKOrderedTask {
     var form6Questions = [ORKFormItem]()
     var form7Questions = [ORKFormItem]()
     var form8Questions = [ORKFormItem]()
+    var form9Questions = [ORKFormItem]()
     var genders = [ORKTextChoice]()
     
     //Beginning of: Instruction step
@@ -458,7 +459,7 @@ public var SurveyTask: ORKOrderedTask {
     
     //followed a diet
     var dietStyles = [ORKTextChoice]()
-    let lowCarb = ORKTextChoice(text: "Low carbs", detailText: "nil", value: "lowCarb" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let lowCarb = ORKTextChoice(text: "Low carbs", detailText: nil, value: "lowCarb" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     let lowFat = ORKTextChoice(text: "Low fat", detailText: nil, value: "lowFat" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     let calorieCounting = ORKTextChoice(text: "Calorie counting", detailText: nil, value: "calorieCounting" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     let portionControl = ORKTextChoice(text: "Portion control", detailText: nil, value: "portionControl" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
@@ -472,7 +473,7 @@ public var SurveyTask: ORKOrderedTask {
     
     //water intake
     var waterAmount = [ORKTextChoice]()
-    let lowAmount = ORKTextChoice(text: "1 Liter", detailText: "nil", value: "lowAmount" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let lowAmount = ORKTextChoice(text: "1 Liter", detailText: nil, value: "lowAmount" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     let mediumAmount = ORKTextChoice(text: "2 Liters", detailText: nil, value: "mediumAmount" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     let largeAmount = ORKTextChoice(text: "3 Liters", detailText: nil, value: "largeAmount" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     waterAmount += [lowAmount, mediumAmount, largeAmount]
@@ -509,6 +510,92 @@ public var SurveyTask: ORKOrderedTask {
     //End of form8 on Current/Prior diet
     form8.formItems = form8Questions
     steps += [form8]
+    //
+    
+    //Form9: Physical activity
+    let form9 = ORKFormStep(identifier: "form9", title: "Form #9", text: "Physical Activity")
+    //
+    
+    //Leisure time physical activity
+    var activities = [ORKTextChoice]()
+    let walking = ORKTextChoice(text: "Walking", detailText: nil, value: "walking" as NSCoding & NSCopying & NSObjectProtocol, exclusive: false)
+    let dancing = ORKTextChoice(text: "Dancing", detailText: nil, value: "dancing" as NSCoding & NSCopying & NSObjectProtocol, exclusive: false)
+    let gardening = ORKTextChoice(text: "Gardening", detailText: nil, value: "gardening" as NSCoding & NSCopying & NSObjectProtocol, exclusive: false)
+    let hiking = ORKTextChoice(text: "Hiking", detailText: nil, value: "hiking" as NSCoding & NSCopying & NSObjectProtocol, exclusive: false)
+    let swimming = ORKTextChoice(text: "Swimming", detailText: nil, value: "swimming" as NSCoding & NSCopying & NSObjectProtocol, exclusive: false)
+    activities += [walking, dancing, gardening, hiking, swimming]
+    
+    let leisureActivityAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.multipleChoice, textChoices: activities)
+    let leisureActivityQuestionText = "How much water do you drink each day?"
+    let leisureActivityQuestion = ORKFormItem(identifier: "leisureActivityQuestion", text: leisureActivityQuestionText, answerFormat: leisureActivityAnswerFormat, optional: false)
+    form9Questions += [leisureActivityQuestion]
+    //
+    
+    //section
+    let transportationTitle = ORKFormItem(sectionTitle: "Transportation")
+    form9Questions += [transportationTitle]
+    //
+    
+    //transportation
+    var transportationMeans = [ORKTextChoice]()
+    let walkTransportation = ORKTextChoice(text: "Walking", detailText: nil, value: "walkTransportation" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let cycling = ORKTextChoice(text: "Cycling", detailText: nil, value: "cycling" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let driving = ORKTextChoice(text: "Driving", detailText: nil, value: "driving" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    transportationMeans += [walkTransportation, cycling, driving]
+    
+    let transportationAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: transportationMeans)
+    let transportationQuestionText = "What is your main mode of transporation?"
+    let transportationQuestion = ORKFormItem(identifier: "transportationQuestion", text: transportationQuestionText, answerFormat: transportationAnswerFormat, optional: false)
+    form9Questions += [transportationQuestion]
+    //
+    
+    //section
+    let occupationTitle = ORKFormItem(sectionTitle: "Occupation")
+    form9Questions += [occupationTitle]
+    //
+    
+    //Occupation
+    var occupationType = [ORKTextChoice]()
+    let office = ORKTextChoice(text: "Office", detailText: nil, value: "office" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let manual = ORKTextChoice(text: "Manual labor", detailText: nil, value: "manual" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let mixed = ORKTextChoice(text: "Mixed", detailText: nil, value: "mixed" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    occupationType += [office, manual, mixed]
+    
+    let occupationTypeAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: occupationType)
+    let occupationTypeQuestionText = "How would you describe your occupation?"
+    let occupationTypeQuestion = ORKFormItem(identifier: "occupationTypeQuestion", text: occupationTypeQuestionText, answerFormat: occupationTypeAnswerFormat, optional: false)
+    form9Questions += [occupationTypeQuestion]
+    //
+    
+    //Exercise
+    let exerciseTitle = ORKFormItem(sectionTitle: "Exercise")
+    form9Questions += [exerciseTitle]
+    //
+    
+    //Exercise
+    var exercisePeriods = [ORKTextChoice]()
+    let onceWeek = ORKTextChoice(text: "Once a week", detailText: nil, value: "onceWeek" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let twoToFour = ORKTextChoice(text: "2 to 4 days a week", detailText: nil, value: "twoToFour" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let fiveToSeven = ORKTextChoice(text: "5 to 7 days a week", detailText: nil, value: "fiveToSeven" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    exercisePeriods += [onceWeek, twoToFour, fiveToSeven]
+    
+    let exerciseFrequencyAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: exercisePeriods)
+    let exerciseFrequencyQuestionText = "In a typical week, how many days do you exercise?"
+    let exerciseFrequencyQuestion = ORKFormItem(identifier: "exerciseFrequencyQuestion", text: exerciseFrequencyQuestionText, answerFormat: exerciseFrequencyAnswerFormat, optional: false)
+    form9Questions += [exerciseFrequencyQuestion]
+    //
+    
+    //Exercise Duration
+    let exerciseDurationAnswerFormat = ORKTimeIntervalAnswerFormat(defaultInterval: 15, step: 10)
+    let exerciseDurationQuestionText = "What is the duration of your exercise?"
+    let exerciseDurationQuestion = ORKFormItem(identifier: "exerciseDurationQuestion", text: exerciseDurationQuestionText, answerFormat: exerciseDurationAnswerFormat, optional: false)
+    form9Questions += [exerciseDurationQuestion]
+    
+    //
+    
+    //End of form9 on Current/Prior diet
+    form9.formItems = form9Questions
+    steps += [form9]
     //
     
     let completionStep = ORKCompletionStep(identifier: "SummaryStep")
