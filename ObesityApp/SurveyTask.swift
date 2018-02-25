@@ -7,7 +7,7 @@
 //
 
 import ResearchKit
-ORKNavigableOrderedTask
+
 public var SurveyTask: ORKOrderedTask {
     
     var steps = [ORKStep]()
