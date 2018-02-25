@@ -16,6 +16,8 @@ public var SurveyTask: ORKOrderedTask {
     var form3Questions = [ORKFormItem]()
     var form4Questions = [ORKFormItem]()
     var form5Questions = [ORKFormItem]()
+    var form6Questions = [ORKFormItem]()
+    var form7Questions = [ORKFormItem]()
     var genders = [ORKTextChoice]()
     
     //Beginning of: Instruction step
@@ -199,7 +201,7 @@ public var SurveyTask: ORKOrderedTask {
     
     
     //Form 4: Mobile and internet usage
-    let form4 = ORKFormStep(identifier: "form4", title: "From #4", text: "Please answer the following questions")
+    let form4 = ORKFormStep(identifier: "form4", title: "Form #4", text: "Please answer the following questions")
     //
     
     //Mobile Phone usage
@@ -247,7 +249,7 @@ public var SurveyTask: ORKOrderedTask {
     //
     
     //Form5: Medical history form
-    let form5 = ORKFormStep(identifier: "form5", title: "From #5", text: "Please answer the following questions")
+    let form5 = ORKFormStep(identifier: "form5", title: "Form #5", text: "Personal Medical History")
     //
     
     //Heart diseases
@@ -268,16 +270,162 @@ public var SurveyTask: ORKOrderedTask {
     let diabetesAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
     let diabetesQuestionText = "Do you suffer from diabetes?"
     let diabetesQuestion = ORKFormItem(identifier: "diabetesQuestion", text: diabetesQuestionText, answerFormat: diabetesAnswerFormat, optional: false)
-    form5Questions += [hypertensionQuestion]
+    form5Questions += [diabetesQuestion]
     //
     
     //Psychological determinates
+    var moodChoices = [ORKTextChoice]()
+    let normal = ORKTextChoice(text: "Normal", detailText: "I feel healthy and normal", value: "normal" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let depressed = ORKTextChoice(text: "Depressed", detailText: "I feel depressed", value: "depressed" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let mania = ORKTextChoice(text: "Mania", detailText: "I very excited and euphoric all the time", value: "mania" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    moodChoices += [depressed, normal, mania]
     
+    let moodAnswerFormat = ORKTextScaleAnswerFormat(textChoices: moodChoices, defaultIndex: 1, vertical: false)
+    let moodQuestionText = "How would you describe your current psychological state?"
+    let moodQuestion = ORKFormItem(identifier: "modeQuestion", text: moodQuestionText, answerFormat: moodAnswerFormat, optional: false)
+    form5Questions += [moodQuestion]
+    //
+    
+    //Stress level
+    let stressAnswerFormat = ORKBooleanAnswerFormat(yesString: "High", noString: "Normal")
+    let stressQuestionText = "How would you describe your current stress level?"
+    let stressQuestion = ORKFormItem(identifier: "stressQuestion", text: stressQuestionText, answerFormat: stressAnswerFormat, optional: false)
+    form5Questions += [stressQuestion]
+    //
+    
+    //Back/joint pain
+    let backJointAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let backJointQuestionText = "Do you suffer from back or joint pain?"
+    let backJointQuestion = ORKFormItem(identifier: "backJointQuestion", text: backJointQuestionText, answerFormat: backJointAnswerFormat, optional: false)
+    form5Questions += [backJointQuestion]
+    //
+    
+    //Cancer
+    let cancerAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let cancerQuestionText = "Do you suffer from cancer?"
+    let cancerQuestion = ORKFormItem(identifier: "cancerQuestion", text: cancerQuestionText, answerFormat: cancerAnswerFormat, optional: false)
+    form5Questions += [cancerQuestion]
+    //
+    
+    //Skin infection
+    let skinInfectionAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let skinInfectionQuestionText = "Do you suffer from any skin infection?"
+    let skinInfectionQuestion = ORKFormItem(identifier: "skinInfectionQuestion", text: skinInfectionQuestionText, answerFormat: skinInfectionAnswerFormat, optional: false)
+    form5Questions += [skinInfectionQuestion]
+    //
+    
+    //Thyroid
+    let thyroidAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let thyroidQuestionText = "Do you suffer from any thyroid disorder like Hypo/Hyperthyroidism?"
+    let thyroidQuestion = ORKFormItem(identifier: "thyroidQuestion", text: thyroidQuestionText, answerFormat: thyroidAnswerFormat, optional: false)
+    form5Questions += [thyroidQuestion]
+    //
+    
+    //Fertility
+    let fertilityAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let fertilityQuestionText = "Do you suffer from fertility issues?"
+    let fertilityQuestion = ORKFormItem(identifier: "fertilityQuestion", text: fertilityQuestionText, answerFormat: fertilityAnswerFormat, optional: false)
+    form5Questions += [fertilityQuestion]
+    //
+    
+    //Quality of sleep section
+    let sleepTitle = ORKFormItem(sectionTitle: "Quality of sleep")
+    form5Questions += [sleepTitle]
+    //
+    
+    //snoring
+    let snoringAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let snoringQuestionText = "Do you snore?"
+    let snoringQuestion = ORKFormItem(identifier: "snoringQuestion", text: snoringQuestionText, answerFormat: snoringAnswerFormat, optional: false)
+    form5Questions += [snoringQuestion]
+    //
+    
+    //morning headache
+    let morningHeadacheAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let morningHeadacheQuestionText = "Do you suffer from morning headache?"
+    let morningHeadacheQuestion = ORKFormItem(identifier: "morningHeadacheQuestion", text: morningHeadacheQuestionText, answerFormat: morningHeadacheAnswerFormat, optional: false)
+    form5Questions += [morningHeadacheQuestion]
+    //
+    
+    //insomnia
+    let insomniaAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let insomniaQuestionText = "Do you suffer from insomnia (difficulty of falling asleep)?"
+    let insomniaQuestion = ORKFormItem(identifier: "insomniaQuestion", text: insomniaQuestionText, answerFormat: insomniaAnswerFormat, optional: false)
+    form5Questions += [insomniaQuestion]
+    //
+    
+    //d.    Narcolepsy
+    let narcolepsyAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let narcolepsyQuestionText = "Do you suffer from narcolepsy (sudden sleep attacks at work or school)?"
+    let narcolepsyQuestion = ORKFormItem(identifier: "narcolepsyQuestion", text: narcolepsyQuestionText, answerFormat: narcolepsyAnswerFormat, optional: false)
+    form5Questions += [narcolepsyQuestion]
     //
     
     //End of form5 on medical history
     form5.formItems = form5Questions
     steps += [form5]
+    //
+    
+    //Form6: Family medical history
+    let form6 = ORKFormStep(identifier: "form6", title: "Form #6", text: "Family Medical History")
+    //
+    
+    //family heart diseases
+    let familyHeartDiseaseAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let familyHeartDiseaseQuestionText = "Do you have any family member who suffers from heart disease(s)?"
+    let familyHeartDiseaseQuestion = ORKFormItem(identifier: "familyHeartDiseaseQuestion", text: familyHeartDiseaseQuestionText, answerFormat: familyHeartDiseaseAnswerFormat, optional: false)
+    form6Questions += [familyHeartDiseaseQuestion]
+    //
+    
+    //family hypertension
+    let familyHypertensionAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let familyHypertensionQuestionText = "Do you have any family member who suffers from hypertension?"
+    let familyHypertensionQuestion = ORKFormItem(identifier: "familyHypertensionQuestion", text: familyHypertensionQuestionText, answerFormat: familyHypertensionAnswerFormat, optional: false)
+    form6Questions += [familyHypertensionQuestion]
+    //
+    
+    //family diabetes
+    let familyDiabetesAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let familyDiabetesQuestionText = "Do you have any family member who suffers from diabetes?"
+    let familyDiabetesQuestion = ORKFormItem(identifier: "familyDiabetesQuestion", text: familyDiabetesQuestionText, answerFormat: familyDiabetesAnswerFormat, optional: false)
+    form6Questions += [familyDiabetesQuestion]
+    //
+    
+    //family cancer
+    let familyCancerAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let familyCancerQuestionText = "Do you have any family member who suffers from cancer?"
+    let familyCancerQuestion = ORKFormItem(identifier: "familyCancerQuestion", text: familyCancerQuestionText, answerFormat: familyCancerAnswerFormat, optional: false)
+    form6Questions += [familyCancerQuestion]
+    //
+    
+    //family thyroid
+    let familyThyroidAnswerFormat = ORKBooleanAnswerFormat(yesString: "Yes", noString: "No")
+    let familyThyroidQuestionText = "Do you have any family member who suffers from a thyroid condition?"
+    let familyThyroidQuestion = ORKFormItem(identifier: "familyThyroidQuestion", text: familyThyroidQuestionText, answerFormat: familyThyroidAnswerFormat, optional: false)
+    form6Questions += [familyThyroidQuestion]
+    //
+    
+    //End of form6 on family medical history
+    form6.formItems = form6Questions
+    steps += [form6]
+    //
+    
+    //Form7: Current/Prior diet
+    let form7 = ORKFormStep(identifier: "form7", title: "Form #7", text: "Current/Prior Diet")
+    //
+    
+    //Section describe your diet
+    let dietTitle = ORKFormItem(sectionTitle: "Describe your current diet")
+    form7Questions += [dietTitle]
+    //
+    
+    //dietary style
+    
+    //
+    
+    //End of form7 on Current/Prior diet
+    form7.formItems = form7Questions
+    steps += [form7]
     //
     
     let completionStep = ORKCompletionStep(identifier: "SummaryStep")

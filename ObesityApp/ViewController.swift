@@ -15,7 +15,7 @@ class ViewController: UIViewController, ORKTaskViewControllerDelegate {
         _ taskViewController: ORKTaskViewController,
         didFinishWith reason: ORKTaskViewControllerFinishReason,
         error: Error?) {
-        
+        print(taskViewController.result)
         taskViewController.dismiss(animated: true, completion: nil)
         
     }
@@ -38,6 +38,7 @@ class ViewController: UIViewController, ORKTaskViewControllerDelegate {
     
     @IBAction func surveyClicked(_ sender: UIButton) {
         let taskViewController = ORKTaskViewController(task: SurveyTask, taskRun: nil)
+        
         taskViewController.delegate = self
         present(taskViewController, animated: true, completion: nil)
     }
