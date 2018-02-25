@@ -7,7 +7,7 @@
 //
 
 import ResearchKit
-
+ORKNavigableOrderedTask
 public var SurveyTask: ORKOrderedTask {
     
     var steps = [ORKStep]()
@@ -420,8 +420,46 @@ public var SurveyTask: ORKOrderedTask {
     form7Questions += [dietTitle]
     //
     
-    //dietary style
+    //carbs
+    let carbsAnswerFormat = ORKBooleanAnswerFormat(yesString: "High", noString: "Low")
+    let carbsQuestionText = "Your carbohydrates consumption is:"
+    let carbsQuestion = ORKFormItem(identifier: "carbsQuestion", text: carbsQuestionText, answerFormat: carbsAnswerFormat, optional: false)
+    form7Questions += [carbsQuestion]
+    //
     
+    //fat
+    let fatAnswerFormat = ORKBooleanAnswerFormat(yesString: "High", noString: "Low")
+    let fatQuestionText = "Your fat consumption is:"
+    let fatQuestion = ORKFormItem(identifier: "fatQuestion", text: fatQuestionText, answerFormat: fatAnswerFormat, optional: false)
+    form7Questions += [fatQuestion]
+    //
+    
+    //protein
+    let proteinAnswerFormat = ORKBooleanAnswerFormat(yesString: "High", noString: "Low")
+    let proteinQuestionText = "Your protein consumption is:"
+    let proteinQuestion = ORKFormItem(identifier: "proteinQuestion", text: proteinQuestionText, answerFormat: proteinAnswerFormat, optional: false)
+    form7Questions += [proteinQuestion]
+    //
+    
+    //fibers
+    let fibersAnswerFormat = ORKBooleanAnswerFormat(yesString: "High", noString: "Low")
+    let fibersQuestionText = "Your fibers consumption is:"
+    let fibersQuestion = ORKFormItem(identifier: "fibersQuestion", text: fibersQuestionText, answerFormat: fibersAnswerFormat, optional: false)
+    form7Questions += [fibersQuestion]
+    //
+    
+    //followed a diet
+    var dietStyles = [ORKTextChoice]()
+    let lowCarb = ORKTextChoice(text: "Low carbs", detailText: "nil", value: "lowCarb" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let lowFat = ORKTextChoice(text: "Low fat", detailText: nil, value: "lowFat" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let calorieCounting = ORKTextChoice(text: "Calorie counting", detailText: nil, value: "calorieCounting" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    let portionControl = ORKTextChoice(text: "Portion control", detailText: nil, value: "portionControl" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+    dietStyles += [lowCarb, lowFat, calorieCounting, portionControl]
+    
+//    let dietFollowedAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: diet)
+//    let genderQuestionText = "Gender: "
+//    let genderQuestion = ORKFormItem(identifier: "genderQuestion", text: genderQuestionText, answerFormat: genderAnswerFormat, optional: false)
+//    form1Questions += [genderQuestion]
     //
     
     //End of form7 on Current/Prior diet
