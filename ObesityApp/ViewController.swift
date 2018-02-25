@@ -15,7 +15,7 @@ class ViewController: UIViewController, ORKTaskViewControllerDelegate {
         _ taskViewController: ORKTaskViewController,
         didFinishWith reason: ORKTaskViewControllerFinishReason,
         error: Error?) {
-        print(taskViewController.result)
+//        print(taskViewController.result.stepResult(forStepIdentifier: "form1")?.result(forIdentifier: "weightQuestion")?.value(forKey: "answer"))
         taskViewController.dismiss(animated: true, completion: nil)
         
     }

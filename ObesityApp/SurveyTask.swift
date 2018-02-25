@@ -29,6 +29,7 @@ public var SurveyTask: ORKOrderedTask {
     
     //Creation of the first form
     let form1 = ORKFormStep(identifier: "form1", title: "First Form", text: "Please answer the following questions")
+    //
     
     //Beginning of: Weight question
     let sectionTitle = ORKFormItem(sectionTitle: "General information")
