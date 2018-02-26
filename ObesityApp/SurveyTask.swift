@@ -21,6 +21,7 @@ public var SurveyTask: ORKOrderedTask {
     var form8Questions = [ORKFormItem]()
     var form9Questions = [ORKFormItem]()
     var genders = [ORKTextChoice]()
+    let other = ORKTextChoice(text: "Other", detailText: nil, value: "other" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     
     //Beginning of: Instruction step
     let instructionStep = ORKInstructionStep(identifier: "IntroStep")
@@ -463,7 +464,7 @@ public var SurveyTask: ORKOrderedTask {
     let lowFat = ORKTextChoice(text: "Low fat", detailText: nil, value: "lowFat" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     let calorieCounting = ORKTextChoice(text: "Calorie counting", detailText: nil, value: "calorieCounting" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     let portionControl = ORKTextChoice(text: "Portion control", detailText: nil, value: "portionControl" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
-    dietStyles += [lowCarb, lowFat, calorieCounting, portionControl]
+    dietStyles += [lowCarb, lowFat, calorieCounting, portionControl, other]
     
     let dietFollowedAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: dietStyles)
     let dietFollowedQuestionText = "If you answered yes to the previous question, what type of diet did you follow? "
@@ -478,7 +479,7 @@ public var SurveyTask: ORKOrderedTask {
     let largeAmount = ORKTextChoice(text: "3 Liters", detailText: nil, value: "largeAmount" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
     waterAmount += [lowAmount, mediumAmount, largeAmount]
     
-    let waterIntakeAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: dietStyles)
+    let waterIntakeAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: waterAmount)
     let waterIntakeQuestionText = "How much water do you drink each day?"
     let waterIntakeQuestion = ORKFormItem(identifier: "waterIntakeQuestion", text: waterIntakeQuestionText, answerFormat: waterIntakeAnswerFormat, optional: false)
     form7Questions += [waterIntakeQuestion]
@@ -605,4 +606,3 @@ public var SurveyTask: ORKOrderedTask {
     
     return ORKOrderedTask(identifier: "SurveyTask", steps: steps)
 }
-
