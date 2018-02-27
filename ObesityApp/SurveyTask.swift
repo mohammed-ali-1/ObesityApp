@@ -10,6 +10,14 @@ import ResearchKit
 
 public var SurveyTask: ORKOrderedTask {
     
+    class login{
+        var login: String
+        init() {
+            login = ""
+        }
+    }
+    
+    
     var steps = [ORKStep]()
     var form1Questions = [ORKFormItem]()
     var form2Questions = [ORKFormItem]()
@@ -22,14 +30,14 @@ public var SurveyTask: ORKOrderedTask {
     var form9Questions = [ORKFormItem]()
     var genders = [ORKTextChoice]()
     let other = ORKTextChoice(text: "Other", detailText: nil, value: "other" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
-    
+
     //Beginning of: Instruction step
     let instructionStep = ORKInstructionStep(identifier: "IntroStep")
     instructionStep.title = "Test Survey"
     instructionStep.text = "This survey is pretty involved. \nPlease take the time to answer all questions. \nCollecting detailed information helps us produce accurate results."
     steps += [instructionStep]
     //End of: Instruction step
-    
+  
     //Creation of the first form
     let form1 = ORKFormStep(identifier: "form1", title: "First Form", text: "Please answer the following questions")
     //
@@ -139,7 +147,7 @@ public var SurveyTask: ORKOrderedTask {
     
     //Beginning of: Nationality question
     let nationalityAnswerFormat = ORKLocationAnswerFormat()
-    let nationalityQuestionText = "What is your nationality? "
+//    let nationalityQuestionText = "What is your nationality? "
     let nationalityQuestion = ORKQuestionStep(identifier: "nationalityQuestion", title: "Nationality", text: "What is your nationality?", answer: nationalityAnswerFormat)
     nationalityQuestion.placeholder = "Iraq"
     steps += [nationalityQuestion]
