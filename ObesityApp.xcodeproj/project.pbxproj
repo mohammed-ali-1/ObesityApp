@@ -7,36 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C22B5952082642700B74F46 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC1B5BB207D40850019F41F /* MapKit.framework */; };
+		7C22B5992082645600B74F46 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C22B5982082645600B74F46 /* HealthKit.framework */; };
+		7C22B5C32082710D00B74F46 /* ResearchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5C22082710D00B74F46 /* ResearchContainerViewController.swift */; };
+		7C22B5C62082714700B74F46 /* HealthClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5C52082714700B74F46 /* HealthClientType.swift */; };
+		7C22B5C82082730700B74F46 /* ResearchContainerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5C72082730700B74F46 /* ResearchContainerSegue.swift */; };
+		7C22B5CA2082732A00B74F46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C22B5C92082732A00B74F46 /* Main.storyboard */; };
+		7C22B5CC2082736700B74F46 /* AnimatableChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5CB2082736700B74F46 /* AnimatableChart.swift */; };
+		7C22B5CF2082740E00B74F46 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5CE2082740E00B74F46 /* OnboardingViewController.swift */; };
+		7C22B5D12082742200B74F46 /* IntroductionVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5D02082742200B74F46 /* IntroductionVIewController.swift */; };
+		7C22B5D72082748C00B74F46 /* PieChartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5D32082748B00B74F46 /* PieChartDataSource.swift */; };
+		7C22B5D82082748C00B74F46 /* DiscreteGraphDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5D42082748C00B74F46 /* DiscreteGraphDataSource.swift */; };
+		7C22B5D92082748C00B74F46 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5D52082748C00B74F46 /* DashboardTableViewController.swift */; };
+		7C22B5DA2082748C00B74F46 /* LineGraphDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5D62082748C00B74F46 /* LineGraphDataSource.swift */; };
+		7C22B5DE20827C2800B74F46 /* StudyTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5DC20827C2800B74F46 /* StudyTasks.swift */; };
+		7C22B5DF20827C2800B74F46 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5DD20827C2800B74F46 /* ActivityViewController.swift */; };
+		7C22B5E720827C5B00B74F46 /* ProfileStaticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5E420827C5A00B74F46 /* ProfileStaticTableViewCell.swift */; };
+		7C22B5E820827C5B00B74F46 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5E520827C5B00B74F46 /* ProfileHeaderView.swift */; };
+		7C22B5E920827C5B00B74F46 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5E620827C5B00B74F46 /* ProfileViewController.swift */; };
+		7C22B5EC20827C7900B74F46 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5EB20827C7900B74F46 /* WithdrawViewController.swift */; };
+		7C22B5F120827C8D00B74F46 /* HealthDataStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5EE20827C8C00B74F46 /* HealthDataStepViewController.swift */; };
+		7C22B5F220827C8D00B74F46 /* HealthDataStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5EF20827C8C00B74F46 /* HealthDataStep.swift */; };
+		7C22B5F320827C8D00B74F46 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5F020827C8D00B74F46 /* ConsentDocument.swift */; };
+		7C22B5F620827CAD00B74F46 /* HKHealthStore+Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B5F520827CAD00B74F46 /* HKHealthStore+Queries.swift */; };
 		7C722F7D2041C2E30036A992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C722F7C2041C2E30036A992 /* AppDelegate.swift */; };
 		7C722F7F2041C2E30036A992 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C722F7E2041C2E30036A992 /* ViewController.swift */; };
 		7C722F822041C2E30036A992 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C722F802041C2E30036A992 /* Main.storyboard */; };
 		7C722F852041C2E30036A992 /* ObesityApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C722F832041C2E30036A992 /* ObesityApp.xcdatamodeld */; };
-		7C722F872041C2E30036A992 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C722F862041C2E30036A992 /* Assets.xcassets */; };
 		7C722F8A2041C2E30036A992 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C722F882041C2E30036A992 /* LaunchScreen.storyboard */; };
-		7C722FA22041C4600036A992 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C722F982041C4380036A992 /* ResearchKit.framework */; };
-		7C722FA32041C4600036A992 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C722F982041C4380036A992 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7C722FA92041C6AD0036A992 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C722FA82041C6AD0036A992 /* SurveyTask.swift */; };
 		7C722FAD2041C6BB0036A992 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C722FAC2041C6BB0036A992 /* ConsentTask.swift */; };
+		7C81193C208BD068006BA220 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C81193B208BD068006BA220 /* Condition.swift */; };
+		7C84ADD5207A46E900CD9513 /* DbSurveyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84ADD4207A46E900CD9513 /* DbSurveyTest.swift */; };
+		7C852A6820866D3200C4B928 /* TableStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C852A6720866D3200C4B928 /* TableStep.swift */; };
+		7C852A6C20866D4900C4B928 /* TableStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C852A6B20866D4900C4B928 /* TableStepViewController.swift */; };
+		7C852A6E20866D6600C4B928 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C852A6D20866D6600C4B928 /* Info.swift */; };
+		7C852A7020866DB100C4B928 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C852A6F20866DB100C4B928 /* Extension.swift */; };
+		7C852A7220867D1A00C4B928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C852A7120867D1900C4B928 /* Assets.xcassets */; };
+		7CC1B5D0207D67FD0019F41F /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC1B5CC207D67CD0019F41F /* ResearchKit.framework */; };
+		7CC1B5D1207D67FD0019F41F /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC1B5CC207D67CD0019F41F /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7C722F972041C4380036A992 /* PBXContainerItemProxy */ = {
+		7CC1B5CB207D67CD0019F41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C722F912041C4380036A992 /* ResearchKit.xcodeproj */;
+			containerPortal = 7CC1B5C5207D67CC0019F41F /* ResearchKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = B183A5951A8535D100C76870;
 			remoteInfo = ResearchKit;
 		};
-		7C722F992041C4380036A992 /* PBXContainerItemProxy */ = {
+		7CC1B5CD207D67CD0019F41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C722F912041C4380036A992 /* ResearchKit.xcodeproj */;
+			containerPortal = 7CC1B5C5207D67CC0019F41F /* ResearchKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
 			remoteInfo = ResearchKitTests;
 		};
-		7C722FA42041C4600036A992 /* PBXContainerItemProxy */ = {
+		7CC1B5D2207D67FD0019F41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C722F912041C4380036A992 /* ResearchKit.xcodeproj */;
+			containerPortal = 7CC1B5C5207D67CC0019F41F /* ResearchKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = B183A4731A8535D100C76870;
 			remoteInfo = ResearchKit;
@@ -44,13 +73,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7C722FA62041C4600036A992 /* Embed Frameworks */ = {
+		7CC1B5D4207D67FE0019F41F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7C722FA32041C4600036A992 /* ResearchKit.framework in Embed Frameworks */,
+				7CC1B5D1207D67FD0019F41F /* ResearchKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,17 +87,49 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7C22B5982082645600B74F46 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		7C22B5C22082710D00B74F46 /* ResearchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchContainerViewController.swift; sourceTree = "<group>"; };
+		7C22B5C52082714700B74F46 /* HealthClientType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthClientType.swift; sourceTree = "<group>"; };
+		7C22B5C72082730700B74F46 /* ResearchContainerSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchContainerSegue.swift; sourceTree = "<group>"; };
+		7C22B5C92082732A00B74F46 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7C22B5CB2082736700B74F46 /* AnimatableChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableChart.swift; sourceTree = "<group>"; };
+		7C22B5CE2082740E00B74F46 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		7C22B5D02082742200B74F46 /* IntroductionVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionVIewController.swift; sourceTree = "<group>"; };
+		7C22B5D32082748B00B74F46 /* PieChartDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartDataSource.swift; sourceTree = "<group>"; };
+		7C22B5D42082748C00B74F46 /* DiscreteGraphDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscreteGraphDataSource.swift; sourceTree = "<group>"; };
+		7C22B5D52082748C00B74F46 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
+		7C22B5D62082748C00B74F46 /* LineGraphDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineGraphDataSource.swift; sourceTree = "<group>"; };
+		7C22B5DC20827C2800B74F46 /* StudyTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyTasks.swift; sourceTree = "<group>"; };
+		7C22B5DD20827C2800B74F46 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		7C22B5E420827C5A00B74F46 /* ProfileStaticTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileStaticTableViewCell.swift; sourceTree = "<group>"; };
+		7C22B5E520827C5B00B74F46 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		7C22B5E620827C5B00B74F46 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7C22B5EB20827C7900B74F46 /* WithdrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
+		7C22B5EE20827C8C00B74F46 /* HealthDataStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataStepViewController.swift; sourceTree = "<group>"; };
+		7C22B5EF20827C8C00B74F46 /* HealthDataStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataStep.swift; sourceTree = "<group>"; };
+		7C22B5F020827C8D00B74F46 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
+		7C22B5F520827CAD00B74F46 /* HKHealthStore+Queries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HKHealthStore+Queries.swift"; sourceTree = "<group>"; };
 		7C722F792041C2E30036A992 /* ObesityApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObesityApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C722F7C2041C2E30036A992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C722F7E2041C2E30036A992 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C722F812041C2E30036A992 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C722F842041C2E30036A992 /* ObesityApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ObesityApp.xcdatamodel; sourceTree = "<group>"; };
-		7C722F862041C2E30036A992 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C722F892041C2E30036A992 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C722F8B2041C2E30036A992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C722F912041C4380036A992 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../gitClones/ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		7C722FA82041C6AD0036A992 /* SurveyTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
 		7C722FAC2041C6BB0036A992 /* ConsentTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
+		7C81193B208BD068006BA220 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		7C84ADD4207A46E900CD9513 /* DbSurveyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbSurveyTest.swift; sourceTree = "<group>"; };
+		7C852A6720866D3200C4B928 /* TableStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableStep.swift; sourceTree = "<group>"; };
+		7C852A6B20866D4900C4B928 /* TableStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableStepViewController.swift; sourceTree = "<group>"; };
+		7C852A6D20866D6600C4B928 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		7C852A6F20866DB100C4B928 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7C852A7120867D1900C4B928 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7CC1B5B5207D37080019F41F /* Artwork.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Artwork.xcassets; sourceTree = "<group>"; };
+		7CC1B5B8207D407A0019F41F /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		7CC1B5BA207D407A0019F41F /* ObesityApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObesityApp.entitlements; sourceTree = "<group>"; };
+		7CC1B5BB207D40850019F41F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7CC1B5C5207D67CC0019F41F /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../diff/RKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,17 +137,98 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C722FA22041C4600036A992 /* ResearchKit.framework in Frameworks */,
+				7C22B5992082645600B74F46 /* HealthKit.framework in Frameworks */,
+				7C22B5952082642700B74F46 /* MapKit.framework in Frameworks */,
+				7CC1B5D0207D67FD0019F41F /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C22B5C1208270B800B74F46 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7C22B5C92082732A00B74F46 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		7C22B5C42082713500B74F46 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				7C22B5C52082714700B74F46 /* HealthClientType.swift */,
+				7C22B5CB2082736700B74F46 /* AnimatableChart.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		7C22B5CD208273F700B74F46 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				7C22B5CE2082740E00B74F46 /* OnboardingViewController.swift */,
+				7C22B5D02082742200B74F46 /* IntroductionVIewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		7C22B5D22082747600B74F46 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7C22B5D52082748C00B74F46 /* DashboardTableViewController.swift */,
+				7C22B5D42082748C00B74F46 /* DiscreteGraphDataSource.swift */,
+				7C22B5D62082748C00B74F46 /* LineGraphDataSource.swift */,
+				7C22B5D32082748B00B74F46 /* PieChartDataSource.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		7C22B5DB20827C1800B74F46 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				7C22B5DD20827C2800B74F46 /* ActivityViewController.swift */,
+				7C22B5DC20827C2800B74F46 /* StudyTasks.swift */,
+				7C852A6720866D3200C4B928 /* TableStep.swift */,
+				7C852A6B20866D4900C4B928 /* TableStepViewController.swift */,
+				7C852A6D20866D6600C4B928 /* Info.swift */,
+				7C852A6F20866DB100C4B928 /* Extension.swift */,
+				7C81193B208BD068006BA220 /* Condition.swift */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		7C22B5EA20827C6300B74F46 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7C22B5E520827C5B00B74F46 /* ProfileHeaderView.swift */,
+				7C22B5E420827C5A00B74F46 /* ProfileStaticTableViewCell.swift */,
+				7C22B5E620827C5B00B74F46 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7C22B5ED20827C7C00B74F46 /* Withdrawal */ = {
+			isa = PBXGroup;
+			children = (
+				7C22B5EB20827C7900B74F46 /* WithdrawViewController.swift */,
+			);
+			path = Withdrawal;
+			sourceTree = "<group>";
+		};
+		7C22B5F420827C8F00B74F46 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				7C22B5F020827C8D00B74F46 /* ConsentDocument.swift */,
+				7C22B5EF20827C8C00B74F46 /* HealthDataStep.swift */,
+				7C22B5EE20827C8C00B74F46 /* HealthDataStepViewController.swift */,
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
 		7C722F702041C2E30036A992 = {
 			isa = PBXGroup;
 			children = (
-				7C722F912041C4380036A992 /* ResearchKit.xcodeproj */,
+				7CC1B5C5207D67CC0019F41F /* ResearchKit.xcodeproj */,
 				7C722F7B2041C2E30036A992 /* ObesityApp */,
 				7C722F7A2041C2E30036A992 /* Products */,
 				7C722F9B2041C44A0036A992 /* Frameworks */,
@@ -104,33 +246,50 @@
 		7C722F7B2041C2E30036A992 /* ObesityApp */ = {
 			isa = PBXGroup;
 			children = (
+				7C22B5F420827C8F00B74F46 /* Steps */,
+				7C22B5ED20827C7C00B74F46 /* Withdrawal */,
+				7C22B5EA20827C6300B74F46 /* Profile */,
+				7C22B5DB20827C1800B74F46 /* Activities */,
+				7C22B5D22082747600B74F46 /* Dashboard */,
+				7C22B5CD208273F700B74F46 /* Onboarding */,
+				7C22B5C42082713500B74F46 /* Protocol */,
+				7CC1B5BA207D407A0019F41F /* ObesityApp.entitlements */,
 				7C722F7C2041C2E30036A992 /* AppDelegate.swift */,
 				7C722F7E2041C2E30036A992 /* ViewController.swift */,
 				7C722F802041C2E30036A992 /* Main.storyboard */,
-				7C722F862041C2E30036A992 /* Assets.xcassets */,
+				7CC1B5B5207D37080019F41F /* Artwork.xcassets */,
+				7C852A7120867D1900C4B928 /* Assets.xcassets */,
 				7C722F882041C2E30036A992 /* LaunchScreen.storyboard */,
 				7C722F8B2041C2E30036A992 /* Info.plist */,
 				7C722F832041C2E30036A992 /* ObesityApp.xcdatamodeld */,
 				7C722FAC2041C6BB0036A992 /* ConsentTask.swift */,
 				7C722FA82041C6AD0036A992 /* SurveyTask.swift */,
+				7C84ADD4207A46E900CD9513 /* DbSurveyTest.swift */,
+				7C22B5C22082710D00B74F46 /* ResearchContainerViewController.swift */,
+				7C22B5C72082730700B74F46 /* ResearchContainerSegue.swift */,
+				7C22B5F520827CAD00B74F46 /* HKHealthStore+Queries.swift */,
+				7C22B5C1208270B800B74F46 /* Storyboard */,
 			);
 			path = ObesityApp;
-			sourceTree = "<group>";
-		};
-		7C722F922041C4380036A992 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7C722F982041C4380036A992 /* ResearchKit.framework */,
-				7C722F9A2041C4380036A992 /* ResearchKitTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7C722F9B2041C44A0036A992 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7C22B5982082645600B74F46 /* HealthKit.framework */,
+				7CC1B5BB207D40850019F41F /* MapKit.framework */,
+				7CC1B5B8207D407A0019F41F /* NetworkExtension.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7CC1B5C6207D67CC0019F41F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CC1B5CC207D67CD0019F41F /* ResearchKit.framework */,
+				7CC1B5CE207D67CD0019F41F /* ResearchKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,12 +302,12 @@
 				7C722F752041C2E30036A992 /* Sources */,
 				7C722F762041C2E30036A992 /* Frameworks */,
 				7C722F772041C2E30036A992 /* Resources */,
-				7C722FA62041C4600036A992 /* Embed Frameworks */,
+				7CC1B5D4207D67FE0019F41F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7C722FA52041C4600036A992 /* PBXTargetDependency */,
+				7CC1B5D3207D67FD0019F41F /* PBXTargetDependency */,
 			);
 			name = ObesityApp;
 			productName = ObesityApp;
@@ -168,6 +327,17 @@
 					7C722F782041C2E30036A992 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.VPNLite = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -184,8 +354,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 7C722F922041C4380036A992 /* Products */;
-					ProjectRef = 7C722F912041C4380036A992 /* ResearchKit.xcodeproj */;
+					ProductGroup = 7CC1B5C6207D67CC0019F41F /* Products */;
+					ProjectRef = 7CC1B5C5207D67CC0019F41F /* ResearchKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -196,18 +366,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		7C722F982041C4380036A992 /* ResearchKit.framework */ = {
+		7CC1B5CC207D67CD0019F41F /* ResearchKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ResearchKit.framework;
-			remoteRef = 7C722F972041C4380036A992 /* PBXContainerItemProxy */;
+			remoteRef = 7CC1B5CB207D67CD0019F41F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7C722F9A2041C4380036A992 /* ResearchKitTests.xctest */ = {
+		7CC1B5CE207D67CD0019F41F /* ResearchKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ResearchKitTests.xctest;
-			remoteRef = 7C722F992041C4380036A992 /* PBXContainerItemProxy */;
+			remoteRef = 7CC1B5CD207D67CD0019F41F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -218,8 +388,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C722F8A2041C2E30036A992 /* LaunchScreen.storyboard in Resources */,
-				7C722F872041C2E30036A992 /* Assets.xcassets in Resources */,
 				7C722F822041C2E30036A992 /* Main.storyboard in Resources */,
+				7C852A7220867D1A00C4B928 /* Assets.xcassets in Resources */,
+				7C22B5CA2082732A00B74F46 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,21 +401,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C22B5D12082742200B74F46 /* IntroductionVIewController.swift in Sources */,
+				7C22B5F120827C8D00B74F46 /* HealthDataStepViewController.swift in Sources */,
+				7C22B5C82082730700B74F46 /* ResearchContainerSegue.swift in Sources */,
+				7C22B5F620827CAD00B74F46 /* HKHealthStore+Queries.swift in Sources */,
+				7C22B5C62082714700B74F46 /* HealthClientType.swift in Sources */,
+				7C22B5F320827C8D00B74F46 /* ConsentDocument.swift in Sources */,
+				7C22B5CC2082736700B74F46 /* AnimatableChart.swift in Sources */,
 				7C722FA92041C6AD0036A992 /* SurveyTask.swift in Sources */,
 				7C722F7F2041C2E30036A992 /* ViewController.swift in Sources */,
 				7C722FAD2041C6BB0036A992 /* ConsentTask.swift in Sources */,
+				7C81193C208BD068006BA220 /* Condition.swift in Sources */,
+				7C22B5E820827C5B00B74F46 /* ProfileHeaderView.swift in Sources */,
+				7C84ADD5207A46E900CD9513 /* DbSurveyTest.swift in Sources */,
+				7C22B5D82082748C00B74F46 /* DiscreteGraphDataSource.swift in Sources */,
+				7C22B5F220827C8D00B74F46 /* HealthDataStep.swift in Sources */,
+				7C22B5DA2082748C00B74F46 /* LineGraphDataSource.swift in Sources */,
+				7C852A7020866DB100C4B928 /* Extension.swift in Sources */,
+				7C852A6C20866D4900C4B928 /* TableStepViewController.swift in Sources */,
+				7C852A6E20866D6600C4B928 /* Info.swift in Sources */,
+				7C852A6820866D3200C4B928 /* TableStep.swift in Sources */,
 				7C722F852041C2E30036A992 /* ObesityApp.xcdatamodeld in Sources */,
+				7C22B5D92082748C00B74F46 /* DashboardTableViewController.swift in Sources */,
 				7C722F7D2041C2E30036A992 /* AppDelegate.swift in Sources */,
+				7C22B5DF20827C2800B74F46 /* ActivityViewController.swift in Sources */,
+				7C22B5CF2082740E00B74F46 /* OnboardingViewController.swift in Sources */,
+				7C22B5EC20827C7900B74F46 /* WithdrawViewController.swift in Sources */,
+				7C22B5D72082748C00B74F46 /* PieChartDataSource.swift in Sources */,
+				7C22B5E720827C5B00B74F46 /* ProfileStaticTableViewCell.swift in Sources */,
+				7C22B5E920827C5B00B74F46 /* ProfileViewController.swift in Sources */,
+				7C22B5DE20827C2800B74F46 /* StudyTasks.swift in Sources */,
+				7C22B5C32082710D00B74F46 /* ResearchContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7C722FA52041C4600036A992 /* PBXTargetDependency */ = {
+		7CC1B5D3207D67FD0019F41F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ResearchKit;
-			targetProxy = 7C722FA42041C4600036A992 /* PBXContainerItemProxy */;
+			targetProxy = 7CC1B5D2207D67FD0019F41F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -380,7 +577,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ObesityApp/ObesityApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5QQMQUA843;
 				INFOPLIST_FILE = ObesityApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uos.ObesityApp;
@@ -395,7 +594,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ObesityApp/ObesityApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5QQMQUA843;
 				INFOPLIST_FILE = ObesityApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uos.ObesityApp;

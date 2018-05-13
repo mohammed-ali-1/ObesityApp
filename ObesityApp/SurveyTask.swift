@@ -10,13 +10,6 @@ import ResearchKit
 
 public var SurveyTask: ORKOrderedTask {
     
-    class login{
-        var login: String
-        init() {
-            login = ""
-        }
-    }
-    
     
     var steps = [ORKStep]()
     var form1Questions = [ORKFormItem]()
@@ -28,7 +21,7 @@ public var SurveyTask: ORKOrderedTask {
     var form7Questions = [ORKFormItem]()
     var form8Questions = [ORKFormItem]()
     var form9Questions = [ORKFormItem]()
-    var genders = [ORKTextChoice]()
+    //var genders = [ORKTextChoice]()
     let other = ORKTextChoice(text: "Other", detailText: nil, value: "other" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
 
     //Beginning of: Instruction step
@@ -37,9 +30,10 @@ public var SurveyTask: ORKOrderedTask {
     instructionStep.text = "This survey is pretty involved. \nPlease take the time to answer all questions. \nCollecting detailed information helps us produce accurate results."
     steps += [instructionStep]
     //End of: Instruction step
-  
+    
     //Creation of the first form
     let form1 = ORKFormStep(identifier: "form1", title: "First Form", text: "Please answer the following questions")
+    form1.isOptional = false;
     //
     
     //Beginning of: Weight question
@@ -54,7 +48,8 @@ public var SurveyTask: ORKOrderedTask {
      //End of: Weight question
     
     //Beginning of: Height question
-    let heightAnswerFormat = ORKHeightAnswerFormat(measurementSystem: ORKMeasurementSystem(rawValue: 1)!)
+    //let heightAnswerFormat = ORKHeightAnswerFormat(measurementSystem: ORKMeasurementSystem(rawValue: 1)!)
+    let heightAnswerFormat = ORKHeightAnswerFormat(measurementSystem: ORKMeasurementSystem.metric, defaultHeight: 150)
     let heightQuestionText = "Enter your height (in centimeters): "
     let heightQuestion = ORKFormItem(identifier: "heightQuestion", text: heightQuestionText, answerFormat: heightAnswerFormat, optional: false)
     heightQuestion.placeholder = "Add height"
@@ -62,9 +57,10 @@ public var SurveyTask: ORKOrderedTask {
     //End of: Height question
     
     //Beginning of: Waist circumference question
-    //let waistCircumAnswerFormat = ORKNumericAnswerFormat.integerAnswerFormat(withUnit: "Cm")
     let waistCicrumQuestionText = "Enter your waist circumference (in centimeters): "
-    let waistCicrumQuestion = ORKFormItem(identifier: "waistCircumQuestion", text: waistCicrumQuestionText, answerFormat: heightAnswerFormat, optional: false)
+    let waistAnswerFormat = ORKHeightAnswerFormat(measurementSystem: ORKMeasurementSystem.metric, defaultHeight: 84)
+
+    let waistCicrumQuestion = ORKFormItem(identifier: "waistCircumQuestion", text: waistCicrumQuestionText, answerFormat: waistAnswerFormat, optional: false)
     waistCicrumQuestion.placeholder = "Add waist circumference"
     form1Questions += [waistCicrumQuestion]
     //End of: Waist circumference question
@@ -99,17 +95,28 @@ public var SurveyTask: ORKOrderedTask {
     //Ending of: Date of birth question
     
     //Beginning of: Gender question
-    let male = ORKTextChoice(text: "Male", detailText: nil, value: "Male" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
-    genders += [male]
-    let female = ORKTextChoice(text: "Female", detailText: nil, value: "Female" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
-    genders += [female]
+//    let male = ORKTextChoice(text: "Male", detailText: nil, value: "Male" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+//    genders += [male]
+//    let female = ORKTextChoice(text: "Female", detailText: nil, value: "Female" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+//    genders += [female]
+//
+//    let genderAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: genders)
+//    let genderQuestionText = "Gender: "
+//    let genderQuestion = ORKFormItem(identifier: "genderQuestion", text: genderQuestionText, answerFormat: genderAnswerFormat, optional: false)
+//    form1Questions += [genderQuestion]
+//    //End of: Gender question
     
-    let genderAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: genders)
-    let genderQuestionText = "Gender: "
-    let genderQuestion = ORKFormItem(identifier: "genderQuestion", text: genderQuestionText, answerFormat: genderAnswerFormat, optional: false)
-    form1Questions += [genderQuestion]
-    //End of: Gender question
+    //Gender with images
+    var imageChoices = [ORKImageChoice]()
+    let image = ORKImageChoice(normalImage: #imageLiteral(resourceName: "male-1") as UIImage, selectedImage: #imageLiteral(resourceName: "male-1") as UIImage, text: "Male", value: "male" as NSCoding & NSCopying & NSObjectProtocol)
+    imageChoices += [image]
     
+    let heart = ORKImageChoice(normalImage: #imageLiteral(resourceName: "female-1") as UIImage, selectedImage: #imageLiteral(resourceName: "female-1") as UIImage, text: "Female", value: "female" as NSCoding & NSCopying & NSObjectProtocol)
+    imageChoices += [heart]
+    let genderWithImages = ORKImageChoiceAnswerFormat(imageChoices: imageChoices, style: ORKChoiceAnswerStyle.singleChoice, vertical: false)
+    let genderWithImagesQuestion = ORKFormItem(identifier: "genderWithImages", text: "What is your gender", answerFormat: genderWithImages)
+    genderWithImagesQuestion.isOptional = false
+    form1Questions += [genderWithImagesQuestion]
     //Adding the first form to steps
     form1.formItems = form1Questions
     steps += [form1]
@@ -119,20 +126,38 @@ public var SurveyTask: ORKOrderedTask {
      let form2 = ORKFormStep(identifier: "form2", title: "Second Form", text: "Please answer the following questions")
     //End of creating second form
     
-    //Beginning of: Marital status question
-    var maritalStatus = [ORKTextChoice]()
-    let single = ORKTextChoice(text: "Single", detailText: nil, value: "Single" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
-    let married = ORKTextChoice(text: "Married", detailText: nil, value: "Married" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
-    let divorced = ORKTextChoice(text: "Divorced", detailText: nil, value: "Divorced" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+//    //Beginning of: Marital status question
+//    var maritalStatus = [ORKTextChoice]()
+//    let single = ORKTextChoice(text: "Single", detailText: nil, value: "Single" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+//    let married = ORKTextChoice(text: "Married", detailText: nil, value: "Married" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+//    let divorced = ORKTextChoice(text: "Divorced", detailText: nil, value: "Divorced" as NSCoding & NSCopying & NSObjectProtocol, exclusive: true)
+//    maritalStatus += [single]
+//    maritalStatus += [married]
+//    maritalStatus += [divorced]
+//
+//    let maritalStatusAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: maritalStatus)
+//    let maritalStatusQuestionText = "Your marital status: "
+//    let maritalStatusQuestion = ORKFormItem(identifier: "maritalStatusQuestion", text: maritalStatusQuestionText, answerFormat: maritalStatusAnswerFormat, optional: false)
+//    form2Questions += [maritalStatusQuestion]
+//    //Ending of: Marital status question
+    
+    //Martial question with images:
+    var maritalStatus = [ORKImageChoice]()
+    let single = ORKImageChoice(normalImage: #imageLiteral(resourceName: "single") as UIImage, selectedImage: #imageLiteral(resourceName: "single") as UIImage, text: "Single", value: "single" as NSCoding & NSCopying & NSObjectProtocol)
     maritalStatus += [single]
+    
+    let married = ORKImageChoice(normalImage: #imageLiteral(resourceName: "married") as UIImage, selectedImage: #imageLiteral(resourceName: "married") as UIImage, text: "Married", value: "married" as NSCoding & NSCopying & NSObjectProtocol)
     maritalStatus += [married]
+    
+    let divorced = ORKImageChoice(normalImage: #imageLiteral(resourceName: "divorced") as UIImage, selectedImage: #imageLiteral(resourceName: "divorced") as UIImage, text: "Divorced", value: "divorced" as NSCoding & NSCopying & NSObjectProtocol)
     maritalStatus += [divorced]
     
-    let maritalStatusAnswerFormat = ORKTextChoiceAnswerFormat(style: ORKChoiceAnswerStyle.singleChoice, textChoices: maritalStatus)
-    let maritalStatusQuestionText = "Your marital status: "
-    let maritalStatusQuestion = ORKFormItem(identifier: "maritalStatusQuestion", text: maritalStatusQuestionText, answerFormat: maritalStatusAnswerFormat, optional: false)
+    let maritalStatusAnswerFormat = ORKImageChoiceAnswerFormat(imageChoices: maritalStatus, style: ORKChoiceAnswerStyle.singleChoice, vertical: false)
+    let maritalStatusQuestion = ORKFormItem(identifier: "maritalState", text: "What is your marital state", answerFormat: maritalStatusAnswerFormat)
+    maritalStatusQuestion.isOptional = false
     form2Questions += [maritalStatusQuestion]
-    //Ending of: Marital status question
+    
+    //
     
     //Beginning of: Mobile number question
     let mobileNumberAnswerFormat = ORKNumericAnswerFormat(style: ORKNumericAnswerStyle.integer)
@@ -143,18 +168,21 @@ public var SurveyTask: ORKOrderedTask {
     //End of: Mobile number question
     
     form2.formItems = form2Questions
+    form2.isOptional = false
     steps += [form2]
     
-    //Beginning of: Nationality question
+//    //Beginning of: Nationality question
     let nationalityAnswerFormat = ORKLocationAnswerFormat()
 //    let nationalityQuestionText = "What is your nationality? "
     let nationalityQuestion = ORKQuestionStep(identifier: "nationalityQuestion", title: "Nationality", text: "What is your nationality?", answer: nationalityAnswerFormat)
-    nationalityQuestion.placeholder = "Iraq"
+    nationalityQuestion.placeholder = "Iraqi"
+    nationalityQuestion.isOptional = false
     steps += [nationalityQuestion]
-    //Ending of: Nationality question
+//    //Ending of: Nationality question
     
     //Form3
     let form3 = ORKFormStep(identifier: "form3", title: "Third Form", text: "Please answer the following questions")
+    form3.isOptional = false
     //
     
     //City Question
@@ -208,12 +236,15 @@ public var SurveyTask: ORKOrderedTask {
     let educationLevelTitle = "Education Level"
     let educationLevelQuestionText = "What is your latest educational degree: "
     let educationLevelQuestion = ORKQuestionStep(identifier: "educationLevelQuestion", title: educationLevelTitle, text: educationLevelQuestionText, answer: educationLevelAnswerFormat)
+    educationLevelQuestion.isOptional = false
     steps += [educationLevelQuestion]
     //
     
     
+    //MARK: Form4
     //Form 4: Mobile and internet usage
     let form4 = ORKFormStep(identifier: "form4", title: "Form #4", text: "Please answer the following questions")
+    form4.isOptional = false
     //
     
     //Mobile Phone usage
@@ -257,11 +288,14 @@ public var SurveyTask: ORKOrderedTask {
     let householdIncomeQuestionTitle = "Household Income"
     let householdIncomeQuestionText = "What is your total household income? "
     let houseHoldIncomeQuestion = ORKQuestionStep(identifier: "houseHoldIncomeQuestion", title: householdIncomeQuestionTitle, text: householdIncomeQuestionText, answer: householdIncomeAnswerFormat)
+    houseHoldIncomeQuestion.isOptional = false
     steps += [houseHoldIncomeQuestion]
     //
     
+    //MARK: Form 5
     //Form5: Medical history form
     let form5 = ORKFormStep(identifier: "form5", title: "Form #5", text: "Personal Medical History")
+    form5.isOptional = false
     //
     
     //Heart diseases
@@ -378,8 +412,10 @@ public var SurveyTask: ORKOrderedTask {
     steps += [form5]
     //
     
+    //MARK: Form 6
     //Form6: Family medical history
     let form6 = ORKFormStep(identifier: "form6", title: "Form #6", text: "Family Medical History")
+    form6.isOptional = false
     //
     
     //family heart diseases
@@ -422,8 +458,10 @@ public var SurveyTask: ORKOrderedTask {
     steps += [form6]
     //
     
+    //MARK: Form 7
     //Form7: Current/Prior diet
     let form7 = ORKFormStep(identifier: "form7", title: "Form #7", text: "Current/Prior Diet")
+    form7.isOptional = false
     //
     
     //Section describe your diet
@@ -498,8 +536,10 @@ public var SurveyTask: ORKOrderedTask {
     steps += [form7]
     //
     
+    //MARK: Form 8
     //Form8: Social/Behavioural
     let form8 = ORKFormStep(identifier: "form8", title: "Form #8", text: "Social/Behavioral")
+    form8.isOptional = false
     //
     
     //Eat outside/home
@@ -521,8 +561,10 @@ public var SurveyTask: ORKOrderedTask {
     steps += [form8]
     //
     
+    //MARK: Form 9
     //Form9: Physical activity
     let form9 = ORKFormStep(identifier: "form9", title: "Form #9", text: "Physical Activity")
+    form9.isOptional = false
     //
     
     //Leisure time physical activity
@@ -605,6 +647,13 @@ public var SurveyTask: ORKOrderedTask {
     //End of form9 on Current/Prior diet
     form9.formItems = form9Questions
     steps += [form9]
+    //
+    
+    //
+    let reviewStep = ORKReviewStep(identifier: "ReviewStep")
+    reviewStep.excludeInstructionSteps = true
+    steps += [reviewStep]
+    
     //
     
     let completionStep = ORKCompletionStep(identifier: "SummaryStep")
