@@ -259,5 +259,83 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Activities/TableStep.swift"
+            timestampString = "548030576.805436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "myTableView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ObesityApp.TableStepViewController.init(step: Swift.Optional&lt;__ObjC.ORKStep&gt;) -&gt; ObesityApp.TableStepViewController"
+                  moduleName = "ObesityApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammedalameen/Desktop/Medical%20App/ObesityApp/ObesityApp/Activities/TableStep.swift"
+                  timestampString = "548030576.9711421"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "672">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ObesityApp.TableStepViewController.init(step: __ObjC.ORKStep, result: __ObjC.ORKResult) -&gt; ObesityApp.TableStepViewController"
+                  moduleName = "ObesityApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammedalameen/Desktop/Medical%20App/ObesityApp/ObesityApp/Activities/TableStep.swift"
+                  timestampString = "548030576.97316"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "683">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ObesityApp.TableStepViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ObesityApp.TableStepViewController"
+                  moduleName = "ObesityApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammedalameen/Desktop/Medical%20App/ObesityApp/ObesityApp/Activities/TableStep.swift"
+                  timestampString = "548030576.9748009"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "686">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ObesityApp.TableStepViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;ObesityApp.TableStepViewController&gt;"
+                  moduleName = "ObesityApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammedalameen/Desktop/Medical%20App/ObesityApp/ObesityApp/Activities/TableStep.swift"
+                  timestampString = "548030576.976904"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "640">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

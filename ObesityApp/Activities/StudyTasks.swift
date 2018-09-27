@@ -97,14 +97,6 @@ struct StudyTasks {
 //            text:@"Gender"
 //            answerFormat:genderFormat];
         
-        
-        //
-//        let tableStep = TableStep(identifier: "TableStep")
-//        steps += [tableStep]
-        //
-        
-
-        
         //Beginning of: Weight question
         let sectionTitle = ORKFormItem(sectionTitle: "General information")
         form1Questions += [sectionTitle]
@@ -213,6 +205,9 @@ struct StudyTasks {
         //Adding the first form to steps
         form1.formItems = form1Questions
         steps += [form1]
+        
+        var tableStep = TableStep(identifier: "Table")
+        steps += [tableStep]
         //End of adding first form to steps
 //        
 //        //    //Beginning of: Nationality question
